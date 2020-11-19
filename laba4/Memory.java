@@ -16,8 +16,11 @@ public class Memory {
         }
     }
 
-    public CellsClass[] getCells() {
-        return cells;
+    public CellsClass getCellIndex(int index) {
+        if (index > -1 && index < cells.length) {
+            return cells[index];
+        }
+        return null;
     }
 
     public void searchPlace(ManagerFile file) {
@@ -98,5 +101,9 @@ public class Memory {
             }
             cells[file.getIndexFirstCell()].setStatus(0);
         }
+    }
+
+    public int getCellsSize() {
+        return cells.length;
     }
 }
